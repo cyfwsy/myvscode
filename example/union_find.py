@@ -42,17 +42,17 @@ class Partition:
 par = Partition()
 p_set = []
 for i in range(15):
-    p_set.append(par.make_group(i))
-par.union(p_set[0],p_set[2])
+    p_set.append(par.make_group(i)) # create some position object
+par.union(p_set[2],p_set[0])
 par.union(p_set[0],p_set[3])
 par.union(p_set[0],p_set[14])
 par.union(p_set[0],p_set[13])
 par.union(p_set[0],p_set[10])
 
-print(par.find(p_set[2]).element())
+print(par.find(p_set[2]).element())  #find leader of a group
 print(par.find(p_set[10]).element())
 print(par.find(p_set[13]).element())
-print(par.find(p_set[0]).element())
+print(par.find(p_set[3]).element())
 
 
     
