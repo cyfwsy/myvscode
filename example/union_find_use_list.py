@@ -1,7 +1,7 @@
 class UnionFind:
     def __init__(self,n) -> None:
         self.up = list(range(n))
-        self.rank = [0] * n
+        self.rank = [1] * n
         
     def find(self,x):
         if self.up[x] == x:
