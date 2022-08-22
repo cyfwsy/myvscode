@@ -72,6 +72,7 @@ class Ourheap:
 item_list = [23,45,1,100,99,1000,77,888,3999,54,36,-1,-88,10000,987,2000,-9999]
 my_heap = Ourheap(item_list)    
 print(my_heap.heap)
+print(my_heap.rank)
 my_heap.update(-1,-888)
 print(my_heap.heap)
 print(my_heap.pop())

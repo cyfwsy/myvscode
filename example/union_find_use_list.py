@@ -16,8 +16,8 @@ class UnionFind:
         if repr_x == repr_y:   #included in same group
             return False
         if self.rank[repr_x] == self.rank[repr_y]:
-            self.rank[repr_x] += 1
-            self.up[repr_y] = repr_x
+            self.rank[repr_y] += 1
+            self.up[repr_x] = repr_y
         elif self.rank[repr_x] > self.rank[repr_y]:
             self.up[repr_y] = repr_x
             self.rank[repr_x] += 1
