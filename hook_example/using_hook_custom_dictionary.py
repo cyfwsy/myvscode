@@ -21,8 +21,15 @@ class DictionaryRecord:
         # data_dict = super().__getattribute__('_data')
         if name == '_data':
             super().__setattr__(name,value)
+            self._data[name] = value
         else:
             self._data[name] = value
+            
+    def __delattr__(self, name):
+        try:
+            del self._data[name]
+        except KeyError:
+            print('no such attribute')
     
 data = DictionaryRecord({'key1':3,'key2':5})
 print(data.key1)
@@ -33,5 +40,7 @@ data.nofoo = 1000
 print('nofoo >>>',data.nofoo)
 data.key = 'welcome'
 print(data.key)
+del data.key
+
 print('data dictionary >>>',data._data)
 print(data.__dict__)
