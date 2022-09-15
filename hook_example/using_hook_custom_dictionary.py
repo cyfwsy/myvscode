@@ -6,16 +6,16 @@ class DictionaryRecord:
         
     def __getattr__(self, name: str):
         print(f'* Called __getattr__({name !r})')
-        if name == '_data':
-            super().__setattr__(name,{})
-            return self._data
-        else:
-            try:
-                value = self._data[name]
-                return value
-            except KeyError:
-                print(f'No such attribute exists >>> {name !r}')
-                
+        # if name == '_data':
+        #     super().__setattr__(name,{})
+        #     return self._data
+        # else:
+        try:
+            value = self._data[name]
+            return value
+        except KeyError:
+            print(f'No such attribute exists >>> {name !r}')
+            
             
     def __setattr__(self,name,value):
         # data_dict = super().__getattribute__('_data')
@@ -31,7 +31,8 @@ class DictionaryRecord:
         except KeyError:
             print('no such attribute')
     
-data = DictionaryRecord({'key1':3,'key2':5})
+# data = DictionaryRecord()
+data = DictionaryRecord({'key1':123,'key2':'hello world'})
 print(data.key1)
 print(data.key2)
 print('foo >>>',data.foo)
