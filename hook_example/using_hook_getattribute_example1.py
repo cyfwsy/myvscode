@@ -14,7 +14,7 @@ class CustomAttribute:
             return value
         except AttributeError:
             print('no such attribute')
-            self.dict_1[name] = 'Value'
+            # self.dict_1[name] = 'Value'
             
             
         
@@ -22,7 +22,7 @@ data = CustomAttribute()
 print(data.__dict__)
 print(data.dict_1)
 print(data.exists)
-# print(data.foo)
+print(data.foo)
 data.foo = 'value of foo'
 print(data.foo)
 print(data.dict_1)
